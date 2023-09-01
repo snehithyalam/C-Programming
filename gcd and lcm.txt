@@ -1,0 +1,21 @@
+#include<stdio.h>
+int main()
+{
+int numerator,remainder,denominator,num1,num2,gcd,lcm;
+printf("enter the number:\n");
+scanf("%d",&num1);
+printf("enter the number:\n");
+scanf("%d",num2);
+numerator=(num1>num2)?num1:num2;
+denominator=(num1<num2)?num1:num2;
+remainder=numerator%denominator;
+while(remainder!=0){
+numerator=denominator;
+denominator=remainder;
+remainder=numerator%denominator;
+}
+gcd=denominator;
+lcm=num1*num2/gcd;
+printf("gcd of %d %d=%d",num1,num2,gcd);
+printf("lcm of%d %d=%d",num1,num2,lcm);
+}

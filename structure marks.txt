@@ -1,0 +1,36 @@
+#include <stdio.h>
+struct student {
+    char name[50];
+    int roll;
+    float marks;
+    float test1;
+    float test2;
+    float test3;
+    float test4;
+    float test5;
+    float total;
+    float average;
+} s;
+
+int main() {
+    printf("Enter information:\n");
+    printf("Enter name: ");
+    fgets(s.name, sizeof(s.name), stdin);
+    printf("Enter roll number: ");
+    scanf("%d", &s.roll);
+    printf("Enter marks in five tests \n: ");
+    scanf("%f%f%f%f%f", &s.test1,&s.test2,&s.test3,&s.test4,&s.test5);
+    s.total=s.test1+s.test2+s.test3+s.test4+s.test5;
+    s.average=s.total/5;
+
+
+    printf("Displaying Information:\n");
+    printf("Name: ");
+    printf("%s", s.name);
+    printf("Roll number: %d\n", s.roll);
+    printf("Marks: %.5f\n", s.marks);
+  printf("\nTotal marks of s[%f] ",s.total);
+    printf("average:%2f\t",s.average);
+
+    return 0;
+}
